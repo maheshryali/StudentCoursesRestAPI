@@ -13,7 +13,7 @@ pipeline{
         stage('docker_process') {
             steps {
                 sh """
-                cd ~/workspace/student_courses/
+                cd StudentCoursesRestAPI
                 docker image build -t studentcourse:1.0 .
                 docker container run -d studentcourse:1.0
                 docker tag studentcourse:1.0 maheshryali/latestimage:1.0
