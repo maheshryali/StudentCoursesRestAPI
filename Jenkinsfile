@@ -8,7 +8,7 @@ pipeline{
             steps {
                 sh """
                 git clone https://github.com/maheshryali/StudentCoursesRestAPI.git
-                cd StudentCoursesRestAPI
+                cd /home/ubuntu/remote_repo/workspace/StudentCoursesRestAPI
                 docker image build -t studentcourse:1.0 .
                 docker container run -d studentcourse:1.0
                 docker tag studentcourse:1.0 maheshryali/latestimage:1.0
