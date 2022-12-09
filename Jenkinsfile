@@ -4,15 +4,10 @@ pipeline{
         pollSCM('* * * * *')
     }
     stages {
-        stage('git') {
-            steps {
-                git branch: 'master',
-                       url: 'https://github.com/maheshryali/StudentCoursesRestAPI.git'
-            }
-        }
         stage('docker_process') {
             steps {
                 sh """
+                git clone https://github.com/maheshryali/StudentCoursesRestAPI.git
                 cd StudentCoursesRestAPI
                 docker image build -t studentcourse:1.0 .
                 docker container run -d studentcourse:1.0
