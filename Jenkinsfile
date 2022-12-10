@@ -17,6 +17,8 @@ pipeline{
                 docker image ls
                 docker image build -t studentcourse:1.0 .
                 docker container run -d -P studentcourse:1.0
+                docker tag studentcourse:1.0 maheshryali/latestimage:1.0
+                docker push maheshryali/latestimage:1.0
                 """
             }
         }
