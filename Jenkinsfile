@@ -13,7 +13,7 @@ pipeline{
         stage('docker_process') {
             steps {
                 sh """
-                cd ~/workspace/student_app
+                cd ~/remote_repo/workspace/student_app
                 docker image ls
                 docker image build -t studentcourse:1.0 .
                 docker container run -d -P studentcourse:1.0
